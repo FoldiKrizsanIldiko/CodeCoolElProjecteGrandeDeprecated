@@ -26,4 +26,30 @@ public class LoginPage {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         PageFactory.initElements(driver, this);
     }
+
+    public void openLoginPage(){
+        driver.get(URL);
+    }
+
+    public void fillOut_emailField(String emailAddress){
+        emailField.sendKeys(emailAddress);
+    }
+
+    public void fillOut_passwordField(String password){
+        passwordField.sendKeys(password);
+    }
+
+    public void click_LoginButton(){
+        loginBtn.click();
+    }
+
+    public String verifyLogin(){
+        return userNameText.getText();
+    }
+
+    public boolean verifyPageURL(){
+        return Objects.equals(driver.getCurrentUrl(), URL);
+    }
+
+
 }
