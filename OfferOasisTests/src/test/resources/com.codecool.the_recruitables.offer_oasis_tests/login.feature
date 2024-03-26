@@ -5,24 +5,24 @@ Feature: Login
     Given I am on login page
 
   Scenario: Log in with valid credentials
-    When I fill out the "Your email" field with valid email address
-    And I fill out the "Password" field with valid password
-    And I click on "Login to your account" button
+    When I fill out the Your email field with valid email address
+    And I fill out the Password field with valid password
+    And I click on Login to your account button
     Then I can see that I am Logged in as my username
 
   Scenario Outline: : Log in with invalid credentials
-    When I fill out the "Your email" field with <invalid email address>
-    And I fill out the "Password" field with <invalid password>
-    And I click on "Login to your account" button
+    When I fill out the Your email field with <invalid_email_address>
+    And I fill out the Password field with invalid <password>
+    And I click on Login to your account button
     Then error message appears
 
 
     Examples:
-      | invalid email address           | invalid password      |
-      | adminaaa@admin.com              | wrongPassword |
-      | micimacko                       | malacka       |
-      | elsa@anna.com                   | frozen        |
-      | email@email.com                 |               |
+      | invalid_email_address | password      |
+      | adminaaa@admin.com    | wrongPassword |
+      | micimacko             | malacka       |
+      | elsa@anna.com         | frozen        |
+      | email@email.com       |               |
 
 
 # Have to handle the empty inputs on Step Definition side? Do empty inputs count as invalid acc/pw?

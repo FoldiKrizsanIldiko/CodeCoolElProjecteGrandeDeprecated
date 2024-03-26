@@ -6,19 +6,19 @@ Feature: Cart features
   Background:
     Given I am logged in
     And I have two items in my cart
-    And I am on My Cart/Info page
+    And I am on My CartInfo page
 
   Scenario: Increase the quantity of the product ordered
     When I increase the number of first item in my cart
     Then the total sum of my purchase is increased
 
   Scenario: Place Order
-    When I press "Place Order" button
+    When I press Place Order button
     Then all the products are deleted from cart
     And I am notified that I placed an order
 
   Scenario: Clear cart
-    When I press "Clear Cart" button
+    When I press Clear Cart button
     Then all the products are deleted from the cart
     And I am notified that I placed an order
 

@@ -6,7 +6,7 @@ Feature: Notification after adding item
     And I am on products page
 
   Scenario Outline: I can add one item to cart
-    When I click on "Add to Cart" button below <product>
+    When I click on Add to Cart button below <product>
     Then I am notified that <product> is added to my cart
 
   Examples:
