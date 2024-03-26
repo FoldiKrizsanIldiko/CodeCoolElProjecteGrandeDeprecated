@@ -10,10 +10,10 @@ Feature: Notification after adding item
     Then I am notified that <product> is added to my cart
 
   Examples:
-  | product     |
-  |SmartPhone X |
-  |Laptop Pro   |
-  |Coffee Maker Deluxe|
+    | product            |
+    | SmartPhone X       |
+    | Laptop Pro         |
+    | Coffe Maker Deluxe |
 
   # same scenario as before, but three times
   #Scenario:
