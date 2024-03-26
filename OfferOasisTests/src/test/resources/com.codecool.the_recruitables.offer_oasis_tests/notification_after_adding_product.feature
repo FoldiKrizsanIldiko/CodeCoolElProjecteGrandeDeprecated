@@ -2,7 +2,7 @@ Feature: Notification after adding item
   If I add a new product to my cart, I get a notification
 
   Background:
-    Given I am logged in
+    Given I am logged in to add products to cart
     And I am on products page
 
   Scenario Outline: I can add one item to cart

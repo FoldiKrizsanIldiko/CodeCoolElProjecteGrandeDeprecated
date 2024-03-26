@@ -4,7 +4,7 @@ Feature: Cart features
   I can clear my cart
 
   Background:
-    Given I am logged in
+    Given I am logged in to browse cart
     And I have two items in my cart
     And I am on My CartInfo page
 
@@ -25,7 +25,7 @@ Feature: Cart features
     # separate feature?
   Scenario: Items remain available in cart
   After logging out and logging in again my cart has the same items
-    When I click Logout button
+    When I click Logout button on navbar
     And I login again
     Then my cart have same two items as before
 
