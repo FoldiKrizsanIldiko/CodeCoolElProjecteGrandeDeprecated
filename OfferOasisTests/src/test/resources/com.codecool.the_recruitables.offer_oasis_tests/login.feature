@@ -8,17 +8,17 @@ Feature: Login
     When I fill out the Your email field with valid email address
     And I fill out the Password field with valid password
     And I click on Login to your account button
-    Then I can see that I am Logged in as my username
+    Then I can see that I am logged in
 
   Scenario Outline: : Log in with invalid credentials
-    When I fill out the Your email field with <invalid_email_address>
+    When I fill out the Your email field with invalid <email_address>
     And I fill out the Password field with invalid <password>
     And I click on Login to your account button
     Then error message appears
 
 
     Examples:
-      | invalid_email_address | password      |
+      | email_address | password      |
       | adminaaa@admin.com    | wrongPassword |
       | micimacko             | malacka       |
       | elsa@anna.com         | frozen        |
