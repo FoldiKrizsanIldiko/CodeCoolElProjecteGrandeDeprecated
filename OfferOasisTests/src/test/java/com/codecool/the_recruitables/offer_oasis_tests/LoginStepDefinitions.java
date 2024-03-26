@@ -2,7 +2,9 @@ package com.codecool.the_recruitables.offer_oasis_tests;
 
 import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.HomePage;
 import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.LoginPage;
+import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.Utils;
 import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -17,6 +19,7 @@ public class LoginStepDefinitions {
 
     WebDriver chromedriver = new ChromeDriver();
     LoginPage loginPage = new LoginPage(chromedriver);
+
     @Given("I am on login page")
     public void iAmOnLoginPage() {
         loginPage.openLoginPage();
@@ -24,7 +27,7 @@ public class LoginStepDefinitions {
 
     @When("I fill out the Your email field with valid email address")
     public void iFillOutTheYourEmailFieldWithValidEmailAddress() {
-    loginPage.fillOut_emailField("admin@admin.com");
+        loginPage.fillOut_emailField("admin@admin.com");
     }
 
     @And("I fill out the Password field with valid password")
@@ -39,7 +42,7 @@ public class LoginStepDefinitions {
 
     @Then("I can see that I am logged in")
     public void iCanSeeThatIAmLoggedIn() {
-        assertTrue(loginPage.verifyLogin().contains("Logged in as")) ;
+        assertTrue(loginPage.verifyLogin().contains("Logged in as"));
     }
 
     @When("I fill out the Your email field with invalid {}")
@@ -55,7 +58,8 @@ public class LoginStepDefinitions {
     }
 
     @After
-    public void tearDown(){
+    public void tearDown(Scenario scenario) {
+        if (scenario.isFailed()) Utils.makeScreenshot(chromedriver, "Login");
         chromedriver.quit();
     }
 }
