@@ -1,6 +1,7 @@
 package com.codecool.the_recruitables.offer_oasis_tests;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -49,4 +50,11 @@ public class CartFeaturesStepDefinitions {
     public void myCartHaveSameTwoItemsAsBefore() {
     }
 
+    @Given("I am logged in to browse cart")
+    public void iAmLoggedInToBrowseCart() {
+    }
+
+    @When("I click Logout button on navbar")
+    public void iClickLogoutButtonOnNavbar() {
+    }
 }
