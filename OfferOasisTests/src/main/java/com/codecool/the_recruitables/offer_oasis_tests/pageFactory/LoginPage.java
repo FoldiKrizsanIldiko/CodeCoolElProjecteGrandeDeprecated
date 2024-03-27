@@ -24,6 +24,9 @@ public class LoginPage {
     @FindBy(id = "logged-in-as")
     WebElement userNameText;
 
+    @FindBy(id = "div-for-logout")
+    WebElement divForLogout;
+
     public LoginPage(WebDriver driver) {
         this.chromedriver = driver;
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
@@ -61,6 +64,11 @@ public class LoginPage {
         fillOut_passwordField("admin123");
         click_LoginButton();
         wait.until(ExpectedConditions.urlContains("products"));
+    }
+
+    public boolean hasLogoutButton_changedToLogin(){
+        wait.until(ExpectedConditions.textToBePresentInElement(divForLogout,"Login"));
+        return divForLogout.getText().contains("Login");
     }
 
 
