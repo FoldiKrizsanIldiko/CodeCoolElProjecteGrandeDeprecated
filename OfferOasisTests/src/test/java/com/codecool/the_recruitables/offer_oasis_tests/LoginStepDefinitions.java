@@ -3,6 +3,7 @@ package com.codecool.the_recruitables.offer_oasis_tests;
 import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.LoginPage;
 import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.Utils;
 import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -56,8 +57,12 @@ public class LoginStepDefinitions {
     public void errorMessageAppears() {
         assertTrue(loginPage.errorMessage());
     }
-@After("@login")
-    public void tearDown(){
+
+    @After("@login")
+    public void tearDown(Scenario scenario) {
+        if (scenario.isFailed()) {
+            Utils.makeScreenshot(chromedriver, "login");
+        }
         chromedriver.quit();
-}
+    }
 }
