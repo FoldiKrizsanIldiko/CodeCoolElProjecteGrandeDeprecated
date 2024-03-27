@@ -22,4 +22,8 @@ public class Utils {
             throw new RuntimeException(e);
         }
     }
+
+    public static void quitDriver(WebDriver driver){
+        driver.quit();
+    }
 }
