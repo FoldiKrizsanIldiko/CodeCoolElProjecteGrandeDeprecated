@@ -1,6 +1,5 @@
 package com.codecool.the_recruitables.offer_oasis_tests;
 
-import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.HomePage;
 import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.LoginPage;
 import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.Utils;
 import io.cucumber.java.After;
@@ -9,7 +8,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
