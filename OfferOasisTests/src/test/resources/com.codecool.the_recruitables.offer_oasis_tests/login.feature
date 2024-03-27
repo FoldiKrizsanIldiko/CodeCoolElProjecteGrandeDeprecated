@@ -1,8 +1,10 @@
+@login
 Feature: Login
   I want to log in to Offer Oasis
 
   Background:
     Given I am on login page
+
 
   Scenario: Log in with valid credentials
     When I fill out the Your email field with valid email address
