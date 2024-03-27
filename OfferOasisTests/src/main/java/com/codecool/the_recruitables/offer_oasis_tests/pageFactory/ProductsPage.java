@@ -16,6 +16,9 @@ public class ProductsPage {
     WebDriverWait wait;
     @FindBy(xpath = "//div[@class='Toastify']/div/div/div/div")
     WebElement toast;
+
+    @FindBy(id = "login_register_button")
+    WebElement logoutButton;
     String url = "http://localhost:3000/products";
 
     public ProductsPage(WebDriver driver) {
@@ -39,6 +42,9 @@ public class ProductsPage {
     public boolean ISeeToastForAddingToCart(String productName) {
         wait.until(ExpectedConditions.visibilityOf(toast));
         return toast.getText().contains(productName);
+    }
 
+    public void clickLogoutButton(){
+        logoutButton.click();
     }
 }
