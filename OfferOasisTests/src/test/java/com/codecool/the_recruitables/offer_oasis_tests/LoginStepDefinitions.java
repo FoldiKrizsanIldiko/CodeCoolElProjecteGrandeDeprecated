@@ -2,8 +2,6 @@ package com.codecool.the_recruitables.offer_oasis_tests;
 
 import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.LoginPage;
 import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.Utils;
-import io.cucumber.java.After;
-import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -45,11 +43,13 @@ public class LoginStepDefinitions {
     }
 
     @When("I fill out the Your email field with invalid {}")
-    public void iFillOutTheYourEmailFieldWithInvalidEmailAddress(String arg0) {
+    public void iFillOutTheYourEmailFieldWithInvalidEmailAddress(String email) {
+        loginPage.fillOut_emailField(email);
     }
 
     @And("I fill out the Password field with invalid {}")
-    public void iFillOutThePasswordFieldWithInvalid(String arg0) {
+    public void iFillOutThePasswordFieldWithInvalid(String password) {
+        loginPage.fillOut_passwordField(password);
     }
 
     @Then("error message appears")
@@ -58,9 +58,4 @@ public class LoginStepDefinitions {
         Utils.quitDriver(chromedriver);
     }
 
-    @After
-    public void tearDown(Scenario scenario) {
-        if (scenario.isFailed()) Utils.makeScreenshot(chromedriver, "Login");
-        chromedriver.quit();
-    }
 }
