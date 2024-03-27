@@ -20,11 +20,11 @@ Feature: Login
 
 
     Examples:
-      | email_address | password      |
-      | adminaaa@admin.com    | wrongPassword |
-      | micimacko             | malacka       |
-      | elsa@anna.com         | frozen        |
-      | email@email.com       |               |
+      | email_address      | password      |
+      | adminaaa@admin.com | wrongPassword |
+      | micimacko          | malacka       |
+      | elsa@anna.com      | frozen        |
+      | email@email.com    |               |
 
 
 # Have to handle the empty inputs on Step Definition side? Do empty inputs count as invalid acc/pw?

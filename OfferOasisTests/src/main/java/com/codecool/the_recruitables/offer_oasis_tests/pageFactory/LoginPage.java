@@ -1,5 +1,6 @@
 package com.codecool.the_recruitables.offer_oasis_tests.pageFactory;
 
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -66,10 +67,18 @@ public class LoginPage {
         wait.until(ExpectedConditions.urlContains("products"));
     }
 
-    public boolean hasLogoutButton_changedToLogin(){
-        wait.until(ExpectedConditions.textToBePresentInElement(divForLogout,"Login"));
+    public boolean hasLogoutButton_changedToLogin() {
+        wait.until(ExpectedConditions.textToBePresentInElement(divForLogout, "Login"));
         return divForLogout.getText().contains("Login");
     }
 
-
+    public boolean errorMessage() {
+        try {
+            WebDriverWait wait = new WebDriverWait(chromedriver, Duration.ofSeconds(1));
+            wait.until(ExpectedConditions.alertIsPresent());
+            return true;
+        } catch (NoAlertPresentException e) {
+            return false;
+        }
+    }
 }
