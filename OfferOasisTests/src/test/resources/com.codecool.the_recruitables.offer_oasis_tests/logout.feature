@@ -1,3 +1,4 @@
+@logout
 Feature: Log out
   I want to log out from Offer Oasis
 
