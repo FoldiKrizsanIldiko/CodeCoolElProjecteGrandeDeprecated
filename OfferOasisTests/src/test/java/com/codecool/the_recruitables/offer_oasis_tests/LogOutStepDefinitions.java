@@ -3,6 +3,7 @@ package com.codecool.the_recruitables.offer_oasis_tests;
 import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.LoginPage;
 import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.ProductsPage;
 import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.Utils;
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -41,5 +42,9 @@ public class LogOutStepDefinitions {
     public void iAmNotLoggedIn() {
         assertTrue(loginPage.hasLogoutButton_changedToLogin());
         Utils.quitDriver(chromedriver);
+    }
+    @After("@logout")
+    public void tearDown(){
+        chromedriver.quit();
     }
 }

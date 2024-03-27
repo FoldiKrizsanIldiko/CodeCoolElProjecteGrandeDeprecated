@@ -2,6 +2,7 @@ package com.codecool.the_recruitables.offer_oasis_tests;
 
 import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.LoginPage;
 import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.Utils;
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -57,5 +58,8 @@ public class LoginStepDefinitions {
         System.out.println("Error");
         Utils.quitDriver(chromedriver);
     }
-
+@After("@login")
+    public void tearDown(){
+        chromedriver.quit();
+}
 }

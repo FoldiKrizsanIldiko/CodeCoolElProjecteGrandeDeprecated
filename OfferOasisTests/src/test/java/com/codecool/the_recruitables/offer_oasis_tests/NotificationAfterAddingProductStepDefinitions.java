@@ -39,5 +39,8 @@ public class NotificationAfterAddingProductStepDefinitions {
         assertTrue(productsPage.ISeeToastForAddingToCart(productName));
         Utils.quitDriver(chromedriver);
     }
-
+    @After("@notification")
+    public void tearDown(){
+        chromedriver.quit();
+    }
 }
