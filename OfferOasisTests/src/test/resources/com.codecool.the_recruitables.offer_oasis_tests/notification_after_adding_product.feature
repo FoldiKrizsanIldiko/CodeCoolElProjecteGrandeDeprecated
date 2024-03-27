@@ -10,11 +10,11 @@ Feature: Notification after adding item
     When I click on Add to Cart button below <product>
     Then I am notified that <product> is added to my cart
 
-  Examples:
-    | product            |
-    | SmartPhone X       |
-    | Laptop Pro         |
-    | Coffe Maker Deluxe |
+    Examples:
+      | product            |
+      | SmartPhone X       |
+      | Laptop Pro         |
+      | Coffe Maker Deluxe |
 
   # same scenario as before, but three times
   #Scenario:

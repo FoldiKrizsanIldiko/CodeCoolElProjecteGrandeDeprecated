@@ -29,7 +29,6 @@ public class ProductsPage {
 
     public boolean verifySite() {
         wait.until(ExpectedConditions.urlContains("products"));
-        System.out.println(chromedriver.getCurrentUrl());
         return Objects.equals(chromedriver.getCurrentUrl(), url);
     }
 
@@ -44,7 +43,7 @@ public class ProductsPage {
         return toast.getText().contains(productName);
     }
 
-    public void clickLogoutButton(){
+    public void clickLogoutButton() {
         logoutButton.click();
     }
 }
