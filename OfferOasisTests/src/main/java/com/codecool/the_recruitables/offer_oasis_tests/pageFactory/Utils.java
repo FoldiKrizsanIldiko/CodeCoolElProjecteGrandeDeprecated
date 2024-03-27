@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class Utils {
 
-   static int pictureNum = 1;
+    static int pictureNum = 1;
 
     public static void makeScreenshot(WebDriver chromeDriver, String name) {
         File screenshot = ((TakesScreenshot) chromeDriver).getScreenshotAs(OutputType.FILE);
@@ -23,7 +23,4 @@ public class Utils {
         }
     }
 
-    public static void quitDriver(WebDriver driver){
-        driver.quit();
-    }
 }

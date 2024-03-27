@@ -2,7 +2,6 @@ package com.codecool.the_recruitables.offer_oasis_tests;
 
 import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.LoginPage;
 import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.ProductsPage;
-import com.codecool.the_recruitables.offer_oasis_tests.pageFactory.Utils;
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -10,10 +9,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -35,13 +30,12 @@ public class LogOutStepDefinitions {
 
     @Then("I am redirected to login page")
     public void iAmRedirectedToLoginPage() {
-        loginPage.verifyPageURL();
+        assertTrue(loginPage.verifyPageURL());
     }
 
     @And("I am not logged in")
     public void iAmNotLoggedIn() {
         assertTrue(loginPage.hasLogoutButton_changedToLogin());
-        Utils.quitDriver(chromedriver);
     }
     @After("@logout")
     public void tearDown(){

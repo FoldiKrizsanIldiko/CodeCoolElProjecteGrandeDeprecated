@@ -25,7 +25,6 @@ public class CartFeaturesStepDefinitions {
 
     @Then("the total sum of my purchase is increased")
     public void theTotalSumOfMyPurchaseIsIncreased() {
-        Utils.quitDriver(chromedriver);
     }
 
     @When("I press Place Order button")
@@ -38,7 +37,6 @@ public class CartFeaturesStepDefinitions {
 
     @And("I am notified that I placed an order")
     public void iAmNotifiedThatIPlacedAnOrder() {
-        Utils.quitDriver(chromedriver);
     }
 
     @When("I press Clear Cart button")
@@ -55,7 +53,7 @@ public class CartFeaturesStepDefinitions {
 
     @Then("my cart have same two items as before")
     public void myCartHaveSameTwoItemsAsBefore() {
-        Utils.quitDriver(chromedriver);
+
     }
 
     @Given("I am logged in to browse cart")
