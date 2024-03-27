@@ -41,6 +41,7 @@ public class LoginStepDefinitions {
     @Then("I can see that I am logged in")
     public void iCanSeeThatIAmLoggedIn() {
         assertTrue(loginPage.verifyLogin().contains("Logged in as"));
+        Utils.quitDriver(chromedriver);
     }
 
     @When("I fill out the Your email field with invalid {}")
@@ -53,6 +54,8 @@ public class LoginStepDefinitions {
 
     @Then("error message appears")
     public void errorMessageAppears() {
+        System.out.println("Error");
+        Utils.quitDriver(chromedriver);
     }
 
     @After

@@ -37,13 +37,7 @@ public class NotificationAfterAddingProductStepDefinitions {
     @Then("I am notified that {} is added to my cart")
     public void iAmNotifiedThatIsAddedToMyCart(String productName) {
         assertTrue(productsPage.ISeeToastForAddingToCart(productName));
+        Utils.quitDriver(chromedriver);
     }
 
-    @After
-    public void tearDown(Scenario scenario) {
-        if (scenario.isFailed()) {
-            Utils.makeScreenshot(chromedriver, "addProducts");
-        }
-        chromedriver.quit();
-    }
 }
