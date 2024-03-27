@@ -56,6 +56,7 @@ public class LoginPage {
     }
 
     public boolean verifyPageURL() {
+        wait.until(ExpectedConditions.urlContains("login"));
         return Objects.equals(chromedriver.getCurrentUrl(), URL);
     }
 
