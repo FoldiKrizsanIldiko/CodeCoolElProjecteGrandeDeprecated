@@ -1,3 +1,4 @@
+@notification
 Feature: Notification after adding item
   If I add a new product to my cart, I get a notification
 
